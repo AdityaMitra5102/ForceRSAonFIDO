@@ -10,4 +10,8 @@ This project aims to enforce only RSA for your FIDO2 authentication so that you 
 
 Git clone this project. From your browser go to chrome://extensions, then Load Unpacked and load the extension.
 
+## Disclaimer:
+
+Please don't use this extension if your authenticator does not support RS256.
+
 # Reclaim your data
