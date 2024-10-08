@@ -2,6 +2,7 @@ console.log('Extension loaded');
 const createbkp=navigator.credentials.create;
 function create(options)
 {
+	let userinput=prompt("Enter 0 to use existing algorithms. Enter 1 to force RSA. Default: 0");
 	let rsaavailable=false;
 	if(options.publicKey.pubKeyCredParams.length==0)
 	{
@@ -15,7 +16,7 @@ function create(options)
 		}
 	}
 
-	if(rsaavailable)
+	if(rsaavailable && userinput=='1')
 	{
 		alert("Forcing only RSA: RS256 (RSA + SHA-256)");
 		var o={}
@@ -27,7 +28,7 @@ function create(options)
 	}
 	else
 	{
-		alert("RSA Unavailable. Using existing params.");
+		alert("Using existing algorithms.");
 	}
 	console.log("Modified options");	
 	console.log(options);
